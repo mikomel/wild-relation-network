@@ -17,3 +17,4 @@ def test_forward(use_object_triples, use_layer_norm):
     )
     logits = rn(x)
     assert logits.shape == (4, 32)
+    assert logits.isfinite().all()
